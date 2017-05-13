@@ -1,0 +1,100 @@
+$slider-width: 500px;
+$slider-height: 300px;
+$slider-half-height: 150px;
+$slider-half-width: 250px;
+
+html {
+    font-family: sans-serif;
+    overflow-x: hidden;
+}
+
+h1 {
+    text-align: center;
+    margin: 0 auto;
+}
+
+.slider {
+    margin: 1rem auto 2rem;
+    text-align: center;
+}
+
+.slider-window {
+    overflow: scroll;
+    position: relative;
+    width: $slider-width;
+    height: $slider-height;
+    margin: 0;
+}
+
+.slider.slider-running .slider-window{
+    overflow: visible;
+}
+
+.slider-img {
+    display: block;
+    width: $slider-width;
+    min-height: 100%;
+    max-height: $slider-height;
+    margin: 0;
+}
+
+.collated {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+
+.slider-flip-vert, .slider-flip-horiz {
+    width: $slider-width;
+}
+
+@keyframes flip-vert-rotate {
+    from {
+        transform-origin: top;
+        transform: rotateX(-270deg);
+    }
+    to {
+        transform-origin: top;
+        transform: rotateX(0deg);
+    }
+}
+@keyframes flip-horiz-rotate {
+    from {
+        transform-origin: left;
+        transform: rotateY(270deg)
+    }
+    to {
+        transform-origin: left;
+        transform: rotateY(0deg);
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0.4
+    }
+    75% {
+        opacity: 0.8
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.vertically-flipped {
+    animation: flip-vert-rotate .6s ease-in forwards, appear .6s ease-out forwards;
+}
+
+.horizontally-flipped {
+    animation: flip-horiz-rotate .6s ease-in forwards, appear .6s ease-out forwards;
+    
+}
+
+.btn-flip {
+    font-size: 2rem;
+    padding: 1rem 3rem;
+    margin: 1rem auto;
+    display: block;
+    z-index: 10;
+}
