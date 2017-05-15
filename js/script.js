@@ -12,25 +12,17 @@ $(function() {
             if (el.style[t] !== undefined)
                 return animations[t];
         return false;
-    })(); 
+    })();
     
-    function flip(slider) {
+    function simpleSlider(slider, transitions) {
         var $imgs = $.map(slider.find('.slider-img').addClass('collated'), function(x) {return $(x)}),
             sliderLength = $imgs.length,
-            $buttonForward = slider.find('.btn-forward'),
-            $buttonBackward = slider.find('.btn-backward'),
+            $buttonForward = slider.find('.btn-forward').removeAttr("disabled"),
+            $buttonBackward = slider.find('.btn-backward').removeAttr("disabled"),
             sliderWindow = slider.find('.slider-window'),
-            direction = slider.data('direction') || 'horizontal',
-            flipClasses = {
-                horizontal: ['horizontally-flipped',
-                               'horizontally-flipped-forward'],
-                vertical: [
-                    'vertically-flipped',
-                    'vertically-flipped-forward'
-                ]
-            },
-            forwardClass = flipClasses[direction][1],
-            reverseClass = flipClasses[direction][0];
+            direction = slider.hasClass("slider-vertical") ? "vertical" : "horizontal",
+            forwardClass = transitions[direction][1],
+            reverseClass = transitions[direction][0];
             nextImg = function() {
                 if ($imgs.length < 1) return;
                 var $flippedImg = $imgs.pop();
@@ -52,7 +44,38 @@ $(function() {
         slider.addClass('slider-running');
         $buttonForward.on('click', nextImg);
         $buttonBackward.on('click', prevImg);
+        return { 
+            next: nextImg,
+            previous: prevImg
+        }
     }
-    flip($(".slider-flip").last());
-    flip($(".slider-flip").first());
+    function flip(slider) {
+        return simpleSlider(slider, { horizontal: [
+                'horizontally-flipped',
+                'horizontally-flipped-forward'],
+            vertical: [
+                'vertically-flipped',
+                'vertically-flipped-forward']});
+    }        
+    function shuffle(slider) {
+        return simpleSlider(slider, { horizontal: [
+                'horizontally-shuffled-out',
+                'horizontally-shuffled-in'],
+            vertical: [
+                'vertically-shuffled-out',
+                'vertically-shuffled-in']});
+    }
+    function fancyShuffle(slider) {
+        return simpleSlider(slider, { horizontal: [
+                'fancy-shuffled-out',
+                'fancy-shuffled-in'],
+            vertical: [
+                'fancy-shuffled-out',
+                'fancy-shuffled-in']});        
+    }
+    flip($("#flip-vert"));
+    flip($("#flip-horiz"));
+    shuffle($("#shuffle-horiz"));
+    shuffle($("#shuffle-vert"));
+    fancyShuffle($("#shuffle-fancy"));
 });

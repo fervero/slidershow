@@ -4,31 +4,113 @@
     <meta charset="UTF-8">
     <title>Squirrel slider</title>
     <link rel="stylesheet" href="css/style.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
 </head>
 <body>
-    <h1>A collections of sliders.</h1>
-    <section class="slider slider-flip" data-direction="vertical">
-        <h2>Vertical flip.</h2>
+    <header>
+        <h1>A collections of sliders.</h1>
+        <ul>
+            <li><a href="#flip-vert">vertical flip</a></li>
+            <li><a href="#flip-horiz">horizontal flip</a></li>
+            <li><a href="#shuffle-vert">vertical shuffle</a></li>
+            <li><a href="#shuffle-horiz">horizontal shuffle</a></li>
+            <li><a href="#shuffle-fancy">"fancy" shuffle</a></li>
+        </ul>
+    </header>
+    <p>All the photos taken from <a href="https://unsplash.com/">Unsplash</a>.</p>
+
+    <section class="slider slider-flip slider-vertical" id="flip-vert">
+        <h2>Vertical flip</h2>
         <div class="slider-window">
-            <img src="img/chris-lawton-217895.jpg" alt="Squirrel number one" class="slider-img" id="squirrel1">
-            <img src="img/good-free-photos-3072.jpg" alt="Squirrel number two" class="slider-img">
-            <img src="img/ilnur-kalimullin-117524.jpg" alt="squirrel number three" class="slider-img">
-            <img src="img/remi-skatulski-101224.jpg" alt="squirrel number four" class="slider-img">
+            <div class="slider-img">
+                <img src="img/chris-lawton-217895.jpg" alt="Squirrel number one">
+            </div><div class="slider-img">
+                <img src="img/good-free-photos-3072.jpg" alt="Squirrel number two">
+            </div><div class="slider-img">
+                <img src="img/ilnur-kalimullin-117524.jpg" alt="squirrel number three">
+            </div><div class="slider-img">
+                <img src="img/remi-skatulski-101224.jpg" alt="squirrel number four">
+            </div><div class="slider-img">
+                <img src="img/radoslaw-prekurat-148700.jpg" alt="squirrel number five"></div>
+            <!-- The </div><div> pieces look silly, but that gets rid off the white space. -->
         </div>
-        <button id="btn1" class="btn-backward">Back</button>
-        <button id="btn2" class="btn-forward">Forward</button>
+        <button class="btn-backward" disabled="disabled">Back</button>
+        <button class="btn-forward" disabled="disabled">Forward</button>
     </section>
-    <section class="slider slider-flip" data-direction="horizontal">
-        <h2>Horizontal flip.</h2>
+    <section class="slider slider-flip slider-horizontal" id="flip-horiz">
+        <h2>Horizontal flip</h2>
         <div class="slider-window">
-            <img src="img/chris-lawton-217895.jpg" alt="Squirrel number one" class="slider-img" id="squirrel1">
-            <img src="img/good-free-photos-3072.jpg" alt="Squirrel number two" class="slider-img">
-            <img src="img/ilnur-kalimullin-117524.jpg" alt="squirrel number three" class="slider-img">
-            <img src="img/remi-skatulski-101224.jpg" alt="squirrel number four" class="slider-img">
+            <div class="slider-img"><img src="img/chris-lawton-217895.jpg" alt="Squirrel number one">
+            </div><div class="slider-img"><img src="img/good-free-photos-3072.jpg" alt="Squirrel number two">
+            </div><div class="slider-img"><img src="img/ilnur-kalimullin-117524.jpg" alt="squirrel number three">
+            </div><div class="slider-img"><img src="img/remi-skatulski-101224.jpg" alt="squirrel number four">
+            </div><div class="slider-img"><img src="img/radoslaw-prekurat-148700.jpg" alt="squirrel number five"></div>      
         </div>
-        <button id="btn3" class="btn-backward">Back</button>        
-        <button id="btn4" class="btn-forward">Forward</button>
+        <button class="btn-backward" disabled="disabled">Back</button>        
+        <button class="btn-forward" disabled="disabled">Forward</button>
     </section>
+    <section class="slider slider-slide slider-vertical" id="shuffle-vert">
+        <h2>Vertical shuffle</h2>
+        <div class="slider-window">
+            <div class="slider-img">
+                <img src="img/biel-morro-105783.jpg" alt="cute blue-eyed kitten">            
+            </div><div class="slider-img">
+                <img src="img/james-pond-107985.jpg" alt="cute black kitten">            
+            </div><div class="slider-img">
+                <img src="img/lara-crespo-108759.jpg" alt="cute sleeping kitten">            
+            </div><div class="slider-img">
+                <img src="img/marko-blazevic-219788.jpg" alt="beggar cat">        
+            </div><div class="slider-img">
+                <img src="img/mikhail-vasilyev-130018.jpg" alt="white blue-eyed cat">            
+            </div><div class="slider-img">
+                <img src="img/q-aila-162475.jpg" alt="bunch of kittens">
+            </div>
+        </div>
+        <button class="btn-backward" disabled="disabled">Back</button>        
+        <button class="btn-forward" disabled="disabled">Forward</button>        
+    </section>
+    <section class="slider slider-slide slider-horizontal" id="shuffle-horiz">
+        <h2>Horizontal shuffle</h2>
+        <div class="slider-window">
+            <div class="slider-img">
+                <img src="img/biel-morro-105783.jpg" alt="cute blue-eyed kitten">            
+            </div><div class="slider-img">
+                <img src="img/james-pond-107985.jpg" alt="cute black kitten">            
+            </div><div class="slider-img">
+                <img src="img/lara-crespo-108759.jpg" alt="cute sleeping kitten">            
+            </div><div class="slider-img">
+                <img src="img/marko-blazevic-219788.jpg" alt="beggar cat">        
+            </div><div class="slider-img">
+                <img src="img/mikhail-vasilyev-130018.jpg" alt="white blue-eyed cat">            
+            </div><div class="slider-img">
+                <img src="img/q-aila-162475.jpg" alt="bunch of kittens">
+            </div>
+        </div>
+        <button class="btn-backward" disabled="disabled">Back</button>        
+        <button class="btn-forward" disabled="disabled">Forward</button>        
+    </section>
+    
+    <section class="slider slider-slide slider-horizontal" id="shuffle-fancy">
+        <h2>"Fancy" shuffle</h2>
+        <div class="slider-window">
+            <div class="slider-img">
+                <img src="img/biel-morro-105783.jpg" alt="cute blue-eyed kitten">            
+            </div><div class="slider-img">
+                <img src="img/james-pond-107985.jpg" alt="cute black kitten">            
+            </div><div class="slider-img">
+                <img src="img/lara-crespo-108759.jpg" alt="cute sleeping kitten">            
+            </div><div class="slider-img">
+                <img src="img/marko-blazevic-219788.jpg" alt="beggar cat">        
+            </div><div class="slider-img">
+                <img src="img/mikhail-vasilyev-130018.jpg" alt="white blue-eyed cat">            
+            </div><div class="slider-img">
+                <img src="img/q-aila-162475.jpg" alt="bunch of kittens">
+            </div>
+        </div>
+        <button class="btn-backward" disabled="disabled">Back</button>        
+        <button class="btn-forward" disabled="disabled">Forward</button>        
+    </section>
+    
 </body>
 <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js'></script>
 <script src="js/script.js"></script>
